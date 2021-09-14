@@ -21,6 +21,6 @@ async function _dbConnect () {
     })
 };
 
-app.listen(2222, async () => {
+app.listen(3000, async () => {
     console.log('The server is running');
 });
