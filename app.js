@@ -12,8 +12,8 @@ app.use(express.json());
 
 app.use('/users', user_router);
 
-function _dbConnect () {
-    mongoose.connect('mongodb://localhost:27017/redis');
+async function _dbConnect () {
+    await mongoose.connect('mongodb://localhost:27017/redis');
     const connection = mongoose.connection;
 
     connection.on('error', () => {
@@ -21,6 +21,6 @@ function _dbConnect () {
     })
 };
 
-app.listen(5000, async () => {
+app.listen(2222, async () => {
     console.log('The server is running');
 });
