@@ -31,7 +31,8 @@ module.exports = {
     deleteCachedData: function (key) {
         redisClient.del(key, function (err, data) {
             if (data === 1) {
-                console.log('DELETED!!!')
+                const id = key.split('/')[1];
+                console.log(`User with id ${id} was deleted from redis memory`)
             }
         })
     }
